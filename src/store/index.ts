@@ -34,7 +34,16 @@ export const persistor = persistStore(store);
 // State Type
 export type RootState = ReturnType<typeof reducers>;
 
+
+// Dispatch Type
+export type AppDispatch = typeof store.dispatch
+
+
 // Inject Type RootState on useSelector
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+
+// Inject Type AppDispatch on useDispatch
+export const useAppDispatch: () => AppDispatch = useDispatch
+
 
 export default store;
