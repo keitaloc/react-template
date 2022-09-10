@@ -1,10 +1,9 @@
-// @ts-nocheck
 import {
   combineReducers,
   configureStore,
   getDefaultMiddleware,
 } from "@reduxjs/toolkit";
-import { TypedUseSelectorHook, useSelector } from "react-redux";
+import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import { authReducer } from "./authSlice";
