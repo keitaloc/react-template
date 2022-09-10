@@ -1,12 +1,14 @@
+import { persistReducer, persistStore } from "redux-persist";
+
+import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+
+import { authReducer } from "./authSlice";
 import {
   combineReducers,
   configureStore,
   getDefaultMiddleware,
 } from "@reduxjs/toolkit";
-import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import { authReducer } from "./authSlice";
 
 const reducers = combineReducers({
   auth: authReducer,
@@ -33,16 +35,13 @@ export const persistor = persistStore(store);
 // State Type
 export type RootState = ReturnType<typeof reducers>;
 
-
 // Dispatch Type
-export type AppDispatch = typeof store.dispatch
-
+export type AppDispatch = typeof store.dispatch;
 
 // Inject Type RootState on useSelector
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 // Inject Type AppDispatch on useDispatch
-export const useAppDispatch: () => AppDispatch = useDispatch
-
+export const useAppDispatch: () => AppDispatch = useDispatch;
 
 export default store;

@@ -1,6 +1,8 @@
-import { PageWrapper } from "components/Layout";
-import { PATH } from "helpers/constant";
 import { Link } from "react-router-dom";
+
+import { PATH } from "helpers/constant";
+
+import { PageWrapper } from "components/Layout";
 
 export const HomePage = () => {
   return (
